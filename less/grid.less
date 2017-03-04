@@ -1,0 +1,35 @@
+@import 'grid.variables.less';
+@import 'grid.grid-framework.less';
+
+[class*="col-"]>[class*="row-"]{
+	top:0;
+	overflow: hidden;
+	height: 0px;
+	position: relative;
+}
+.abs-inner{
+	position: absolute;
+	top:0;
+	left: 0;
+	height: auto;
+	bottom:0;
+	right: 0;
+	width: auto;
+	overflow: hidden;
+	max-height: 100%;
+}
+
+.make-grid-rows();
+
+
+.make-rows(xs);
+
+@media (min-width: @screen-sm-min) {
+	.make-rows(sm);
+}
+@media (min-width: @screen-md-min) {
+	.make-rows(md);
+}
+@media (min-width: @screen-lg-min) {
+	.make-rows(lg);
+}

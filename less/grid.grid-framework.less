@@ -1,0 +1,47 @@
+.make-grid-rows() {
+	// Common styles for all sizes of grid rows, widths 1-@{grid-rows}
+	.row(@index) { // initial
+		@name: @index;
+		@item: ~".row-xs-@{name}, .row-sm-@{name}, .row-md-@{name}, .row-lg-@{name}";
+		.row((@index + 1), @item);
+	}
+	.row(@index, @list) when (@index =< (@rows * @times-100)) { // general; "=<" isn't a typo
+		@name: (@index * @times-100);
+		@item: ~".row-xs-@{name}, .row-sm-@{name}, .row-md-@{name}, .row-lg-@{name}";
+		.row((@index + 1), ~"@{list}, @{item}");
+	}
+	.row(@index, @list) when (@index > (@rows * @times-100)) { // terminal
+		@{list} {
+			position: relative;
+			// Inner gutter via padding
+			padding-left: ceil((@grid-gutter-width / 2));
+			padding-right: floor((@grid-gutter-width / 2));
+		}
+	}
+	.row(1); // kickstart it
+}
+
+
+.calc-grid-row(@index, @class) when (@index > 0) {
+	.calc-grid-row-multiplied(@times-100, @class, @index);
+}
+
+.calc-grid-row-multiplied(@index, @class, @row) when (@index > 0){
+	@row-count: @row + ((@index - 1) * @rows);
+	.row-@{class}-@{row-count} {
+			padding-bottom: percentage((@row / @rows) + (@index - 1));
+	}
+	.calc-grid-row-multiplied((@index - 1), @class, @row);
+}
+
+// Basic looping in LESS
+.loop-grid-rows(@index, @class) when (@index >= 0) {
+	.calc-grid-row(@index, @class);
+	// next iteration
+	.loop-grid-rows((@index - 1), @class);
+}
+
+// Create grid for specific class
+.make-rows(@class) {
+	.loop-grid-rows(@rows, @class);
+}

@@ -1,0 +1,18 @@
+{
+    "name": "perfect-bootstrap",
+    "description": "Perfect Bootstrap",
+    "version": "3.0.0",
+    "private": true,
+    "dependencies": {
+    },
+    "devDependencies": {
+        "grunt":                        "latest",
+        "grunt-contrib-cssmin":         "latest",
+        "grunt-contrib-less":           "latest",
+        "grunt-contrib-watch":          "latest",
+        "grunt-remove":                 "latest",
+        "matchdep":                     "latest"
+    },
+    "scripts": {
+    }
+}
