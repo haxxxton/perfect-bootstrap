@@ -1,4 +1,4 @@
-# perfect-bootstrap
+# Perfect Bootstrap
 Responsive fixed ratio rows for use with Bootstrap.
 
 The inspiration for this project was to combine the power of [Fluid Squares](http://fluidsquares.com/)(previously called "Perfect Squares") and [Twitter Bootstrap](http://getbootstrap.com/).
@@ -28,7 +28,7 @@ By default, Perfect Bootstrap provides upto a height of 200% of the width of an 
 However, you can customise the variables used to generate Perfect Bootstrap but altering the included `grid.variables.less` located at `less/grid.variables.less`, then follow the details provided in the Contributing section.
 
 ##Contributing
-Pull Requests are actively encouraged for this project. 
+Despite the name, Perfect Bootstrap claims to be anything but perfect; Pull Requests are actively encouraged for this project. 
 Please install the node packages using `npm`
 ```
 npm install

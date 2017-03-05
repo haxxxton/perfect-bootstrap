@@ -11,9 +11,12 @@
     "bootstrap",
     "web"
   ],
+  "authors": [
+    "James Gill <james@gaandder.com>"
+  ],
   "homepage": "https://github.com/haxxxton/perfect-bootstrap",
   "license": "MIT",
-  "moduleType": "globals",
+  "moduleType": [],
   "main": [
     "dist/perfect-bootstrap.css"
   ],
